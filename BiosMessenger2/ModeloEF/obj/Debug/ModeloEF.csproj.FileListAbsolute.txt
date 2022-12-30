@@ -1,0 +1,23 @@
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\bin\Debug\ModeloEF.dll.config
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\bin\Debug\ModeloEF.dll
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\bin\Debug\ModeloEF.pdb
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\bin\Debug\EntityFramework.dll
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\bin\Debug\EntityFramework.xml
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\obj\Debug\ModeloEF.csproj.CoreCompileInputs.cache
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\obj\Debug\ModeloEF.csproj.CopyComplete
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\obj\Debug\ModeloEF.dll
+C:\Users\acer\source\repos\BiosMessenger2\ModeloEF\obj\Debug\ModeloEF.pdb
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\bin\Debug\ModeloEF.dll.config
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\bin\Debug\ModeloEF.dll
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\bin\Debug\ModeloEF.pdb
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\bin\Debug\EntityFramework.dll
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\bin\Debug\EntityFramework.xml
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\obj\Debug\ModeloEF.csproj.CoreCompileInputs.cache
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\obj\Debug\ModeloEF.csproj.CopyComplete
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\obj\Debug\ModeloEF.dll
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\obj\Debug\ModeloEF.pdb
+C:\Users\acer\Desktop\Visual Studio C#\BIOS 2022\Diseño II\Obligatorio 2\Segunda Opcion\BiosMessenger2\ModeloEF\obj\Debug\ModeloEF.csproj.AssemblyReference.cache

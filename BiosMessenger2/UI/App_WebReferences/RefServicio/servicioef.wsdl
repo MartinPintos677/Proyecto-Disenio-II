@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LogueoUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogueoUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogueoUsuarioResult" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Usuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioLogueo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BuscarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarUsuarioResult" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unU" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarUsuarioResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ModificarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unU" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarUsuarioResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AltaUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unU" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AltaUsuarioResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarTipodeMensaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unT" type="tns:TipodeMensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TipodeMensaje">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminarTipodeMensajeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ModificarTipodeMensaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unT" type="tns:TipodeMensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarTipodeMensajeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscarTipodeMensaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarTipodeMensajeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarTipodeMensajeResult" type="tns:TipodeMensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AltaTipodeMensaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="tns:TipodeMensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AltaTipodeMensajeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarTiposdeMensaje">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarTiposdeMensajeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarTiposdeMensajeResult" type="tns:ArrayOfTipodeMensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipodeMensaje">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipodeMensaje" nillable="true" type="tns:TipodeMensaje" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AltaMensaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unM" type="tns:Mensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Mensaje">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TextoMensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asunto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaHora" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioLogueo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCaducidad" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoMensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipodeMensaje" type="tns:TipodeMensaje" />
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="tns:Usuario" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reciben" type="tns:ArrayOfUsuario" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUsuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Usuario" nillable="true" type="tns:Usuario" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AltaMensajeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarMensajesRecibidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarMensajesRecibidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarMensajesRecibidosResult" type="tns:ArrayOfMensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMensaje">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Mensaje" nillable="true" type="tns:Mensaje" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListaMensajesEnviados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaMensajesEnviadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaMensajesEnviadosResult" type="tns:ArrayOfMensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarRecibidosTipoFecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="tns:Usuario" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="tns:TipodeMensaje" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarRecibidosTipoFechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarRecibidosTipoFechaResult" type="tns:ArrayOfMensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaEnviadosTipoFecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="tns:Usuario" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="tns:TipodeMensaje" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaEnviadosTipoFechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaEnviadosTipoFechaResult" type="tns:ArrayOfMensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CantidadUsuarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="CantidadUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CantidadUsuariosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CantidadMensajesEnviados">
+        <s:complexType />
+      </s:element>
+      <s:element name="CantidadMensajesEnviadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CantidadMensajesEnviadosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CantidadTipos">
+        <s:complexType />
+      </s:element>
+      <s:element name="CantidadTiposResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CantidadTiposResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Destinatarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="M" type="tns:Mensaje" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DestinatariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DestinatariosResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LogueoUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:LogueoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="LogueoUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:LogueoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="EliminarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ModificarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AltaUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:AltaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="AltaUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:AltaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTipodeMensajeSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarTipodeMensaje" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTipodeMensajeSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarTipodeMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarTipodeMensajeSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarTipodeMensaje" />
+  </wsdl:message>
+  <wsdl:message name="ModificarTipodeMensajeSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarTipodeMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarTipodeMensajeSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarTipodeMensaje" />
+  </wsdl:message>
+  <wsdl:message name="BuscarTipodeMensajeSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarTipodeMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AltaTipodeMensajeSoapIn">
+    <wsdl:part name="parameters" element="tns:AltaTipodeMensaje" />
+  </wsdl:message>
+  <wsdl:message name="AltaTipodeMensajeSoapOut">
+    <wsdl:part name="parameters" element="tns:AltaTipodeMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarTiposdeMensajeSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarTiposdeMensaje" />
+  </wsdl:message>
+  <wsdl:message name="ListarTiposdeMensajeSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarTiposdeMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AltaMensajeSoapIn">
+    <wsdl:part name="parameters" element="tns:AltaMensaje" />
+  </wsdl:message>
+  <wsdl:message name="AltaMensajeSoapOut">
+    <wsdl:part name="parameters" element="tns:AltaMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarMensajesRecibidosSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarMensajesRecibidos" />
+  </wsdl:message>
+  <wsdl:message name="ListarMensajesRecibidosSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarMensajesRecibidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaMensajesEnviadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaMensajesEnviados" />
+  </wsdl:message>
+  <wsdl:message name="ListaMensajesEnviadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaMensajesEnviadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarRecibidosTipoFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarRecibidosTipoFecha" />
+  </wsdl:message>
+  <wsdl:message name="ListarRecibidosTipoFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarRecibidosTipoFechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaEnviadosTipoFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaEnviadosTipoFecha" />
+  </wsdl:message>
+  <wsdl:message name="ListaEnviadosTipoFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaEnviadosTipoFechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CantidadUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:CantidadUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="CantidadUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:CantidadUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CantidadMensajesEnviadosSoapIn">
+    <wsdl:part name="parameters" element="tns:CantidadMensajesEnviados" />
+  </wsdl:message>
+  <wsdl:message name="CantidadMensajesEnviadosSoapOut">
+    <wsdl:part name="parameters" element="tns:CantidadMensajesEnviadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CantidadTiposSoapIn">
+    <wsdl:part name="parameters" element="tns:CantidadTipos" />
+  </wsdl:message>
+  <wsdl:message name="CantidadTiposSoapOut">
+    <wsdl:part name="parameters" element="tns:CantidadTiposResponse" />
+  </wsdl:message>
+  <wsdl:message name="DestinatariosSoapIn">
+    <wsdl:part name="parameters" element="tns:Destinatarios" />
+  </wsdl:message>
+  <wsdl:message name="DestinatariosSoapOut">
+    <wsdl:part name="parameters" element="tns:DestinatariosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioEFSoap">
+    <wsdl:operation name="LogueoUsuario">
+      <wsdl:input message="tns:LogueoUsuarioSoapIn" />
+      <wsdl:output message="tns:LogueoUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <wsdl:input message="tns:BuscarUsuarioSoapIn" />
+      <wsdl:output message="tns:BuscarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <wsdl:input message="tns:EliminarUsuarioSoapIn" />
+      <wsdl:output message="tns:EliminarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuario">
+      <wsdl:input message="tns:ModificarUsuarioSoapIn" />
+      <wsdl:output message="tns:ModificarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AltaUsuario">
+      <wsdl:input message="tns:AltaUsuarioSoapIn" />
+      <wsdl:output message="tns:AltaUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipodeMensaje">
+      <wsdl:input message="tns:EliminarTipodeMensajeSoapIn" />
+      <wsdl:output message="tns:EliminarTipodeMensajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarTipodeMensaje">
+      <wsdl:input message="tns:ModificarTipodeMensajeSoapIn" />
+      <wsdl:output message="tns:ModificarTipodeMensajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTipodeMensaje">
+      <wsdl:input message="tns:BuscarTipodeMensajeSoapIn" />
+      <wsdl:output message="tns:BuscarTipodeMensajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AltaTipodeMensaje">
+      <wsdl:input message="tns:AltaTipodeMensajeSoapIn" />
+      <wsdl:output message="tns:AltaTipodeMensajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTiposdeMensaje">
+      <wsdl:input message="tns:ListarTiposdeMensajeSoapIn" />
+      <wsdl:output message="tns:ListarTiposdeMensajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AltaMensaje">
+      <wsdl:input message="tns:AltaMensajeSoapIn" />
+      <wsdl:output message="tns:AltaMensajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMensajesRecibidos">
+      <wsdl:input message="tns:ListarMensajesRecibidosSoapIn" />
+      <wsdl:output message="tns:ListarMensajesRecibidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaMensajesEnviados">
+      <wsdl:input message="tns:ListaMensajesEnviadosSoapIn" />
+      <wsdl:output message="tns:ListaMensajesEnviadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarRecibidosTipoFecha">
+      <wsdl:input message="tns:ListarRecibidosTipoFechaSoapIn" />
+      <wsdl:output message="tns:ListarRecibidosTipoFechaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaEnviadosTipoFecha">
+      <wsdl:input message="tns:ListaEnviadosTipoFechaSoapIn" />
+      <wsdl:output message="tns:ListaEnviadosTipoFechaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CantidadUsuarios">
+      <wsdl:input message="tns:CantidadUsuariosSoapIn" />
+      <wsdl:output message="tns:CantidadUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CantidadMensajesEnviados">
+      <wsdl:input message="tns:CantidadMensajesEnviadosSoapIn" />
+      <wsdl:output message="tns:CantidadMensajesEnviadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CantidadTipos">
+      <wsdl:input message="tns:CantidadTiposSoapIn" />
+      <wsdl:output message="tns:CantidadTiposSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Destinatarios">
+      <wsdl:input message="tns:DestinatariosSoapIn" />
+      <wsdl:output message="tns:DestinatariosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioEFSoap" type="tns:ServicioEFSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogueoUsuario">
+      <soap:operation soapAction="http://tempuri.org/LogueoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <soap:operation soapAction="http://tempuri.org/BuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <soap:operation soapAction="http://tempuri.org/EliminarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuario">
+      <soap:operation soapAction="http://tempuri.org/ModificarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltaUsuario">
+      <soap:operation soapAction="http://tempuri.org/AltaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipodeMensaje">
+      <soap:operation soapAction="http://tempuri.org/EliminarTipodeMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarTipodeMensaje">
+      <soap:operation soapAction="http://tempuri.org/ModificarTipodeMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTipodeMensaje">
+      <soap:operation soapAction="http://tempuri.org/BuscarTipodeMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltaTipodeMensaje">
+      <soap:operation soapAction="http://tempuri.org/AltaTipodeMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTiposdeMensaje">
+      <soap:operation soapAction="http://tempuri.org/ListarTiposdeMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltaMensaje">
+      <soap:operation soapAction="http://tempuri.org/AltaMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMensajesRecibidos">
+      <soap:operation soapAction="http://tempuri.org/ListarMensajesRecibidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaMensajesEnviados">
+      <soap:operation soapAction="http://tempuri.org/ListaMensajesEnviados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRecibidosTipoFecha">
+      <soap:operation soapAction="http://tempuri.org/ListarRecibidosTipoFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaEnviadosTipoFecha">
+      <soap:operation soapAction="http://tempuri.org/ListaEnviadosTipoFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantidadUsuarios">
+      <soap:operation soapAction="http://tempuri.org/CantidadUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantidadMensajesEnviados">
+      <soap:operation soapAction="http://tempuri.org/CantidadMensajesEnviados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantidadTipos">
+      <soap:operation soapAction="http://tempuri.org/CantidadTipos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Destinatarios">
+      <soap:operation soapAction="http://tempuri.org/Destinatarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioEFSoap12" type="tns:ServicioEFSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogueoUsuario">
+      <soap12:operation soapAction="http://tempuri.org/LogueoUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/BuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/EliminarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ModificarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/AltaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipodeMensaje">
+      <soap12:operation soapAction="http://tempuri.org/EliminarTipodeMensaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarTipodeMensaje">
+      <soap12:operation soapAction="http://tempuri.org/ModificarTipodeMensaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTipodeMensaje">
+      <soap12:operation soapAction="http://tempuri.org/BuscarTipodeMensaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltaTipodeMensaje">
+      <soap12:operation soapAction="http://tempuri.org/AltaTipodeMensaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTiposdeMensaje">
+      <soap12:operation soapAction="http://tempuri.org/ListarTiposdeMensaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltaMensaje">
+      <soap12:operation soapAction="http://tempuri.org/AltaMensaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMensajesRecibidos">
+      <soap12:operation soapAction="http://tempuri.org/ListarMensajesRecibidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaMensajesEnviados">
+      <soap12:operation soapAction="http://tempuri.org/ListaMensajesEnviados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRecibidosTipoFecha">
+      <soap12:operation soapAction="http://tempuri.org/ListarRecibidosTipoFecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaEnviadosTipoFecha">
+      <soap12:operation soapAction="http://tempuri.org/ListaEnviadosTipoFecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantidadUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/CantidadUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantidadMensajesEnviados">
+      <soap12:operation soapAction="http://tempuri.org/CantidadMensajesEnviados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantidadTipos">
+      <soap12:operation soapAction="http://tempuri.org/CantidadTipos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Destinatarios">
+      <soap12:operation soapAction="http://tempuri.org/Destinatarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioEF">
+    <wsdl:port name="ServicioEFSoap" binding="tns:ServicioEFSoap">
+      <soap:address location="http://localhost/ServicioObliII/servicioef.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioEFSoap12" binding="tns:ServicioEFSoap12">
+      <soap12:address location="http://localhost/ServicioObliII/servicioef.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

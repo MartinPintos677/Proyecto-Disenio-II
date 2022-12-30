@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BiosMessenger2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Mensaje">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TextoMensaje" Type="varchar(max)" Nullable="false" />
+    <Property Name="Asunto" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="FechaHora" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioLogueo" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="FechaCaducidad" Type="datetime" Nullable="false" />
+    <Property Name="TipoMensaje" Type="char" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reciben">
+    <Key>
+      <PropertyRef Name="UsuarioLogueo" />
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="UsuarioLogueo" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipodeMensaje">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="UsuarioLogueo" />
+    </Key>
+    <Property Name="UsuarioLogueo" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Contrasena" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Mensaje__TipoMen__2F10007B">
+    <End Role="TipodeMensaje" Type="Self.TipodeMensaje" Multiplicity="1" />
+    <End Role="Mensaje" Type="Self.Mensaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipodeMensaje">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Mensaje">
+        <PropertyRef Name="TipoMensaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Mensaje__Usuario__2D27B809">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Mensaje" Type="Self.Mensaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="UsuarioLogueo" />
+      </Principal>
+      <Dependent Role="Mensaje">
+        <PropertyRef Name="UsuarioLogueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reciben__Codigo__32E0915F">
+    <End Role="Mensaje" Type="Self.Mensaje" Multiplicity="1" />
+    <End Role="Reciben" Type="Self.Reciben" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mensaje">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Reciben">
+        <PropertyRef Name="Codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reciben__Usuario__31EC6D26">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Reciben" Type="Self.Reciben" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="UsuarioLogueo" />
+      </Principal>
+      <Dependent Role="Reciben">
+        <PropertyRef Name="UsuarioLogueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BiosMessenger2ModelStoreContainer">
+    <EntitySet Name="Mensaje" EntityType="Self.Mensaje" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reciben" EntityType="Self.Reciben" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipodeMensaje" EntityType="Self.TipodeMensaje" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Mensaje__TipoMen__2F10007B" Association="Self.FK__Mensaje__TipoMen__2F10007B">
+      <End Role="TipodeMensaje" EntitySet="TipodeMensaje" />
+      <End Role="Mensaje" EntitySet="Mensaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Mensaje__Usuario__2D27B809" Association="Self.FK__Mensaje__Usuario__2D27B809">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Mensaje" EntitySet="Mensaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reciben__Codigo__32E0915F" Association="Self.FK__Reciben__Codigo__32E0915F">
+      <End Role="Mensaje" EntitySet="Mensaje" />
+      <End Role="Reciben" EntitySet="Reciben" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reciben__Usuario__31EC6D26" Association="Self.FK__Reciben__Usuario__31EC6D26">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Reciben" EntitySet="Reciben" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

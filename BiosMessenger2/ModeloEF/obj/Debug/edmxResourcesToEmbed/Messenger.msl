@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BiosMessenger2ModelStoreContainer" CdmEntityContainer="BiosMessenger2Entities">
+    <EntitySetMapping Name="Mensaje">
+      <EntityTypeMapping TypeName="BiosMessenger2Model.Mensaje">
+        <MappingFragment StoreEntitySet="Mensaje">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="TextoMensaje" ColumnName="TextoMensaje" />
+          <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+          <ScalarProperty Name="FechaHora" ColumnName="FechaHora" />
+          <ScalarProperty Name="UsuarioLogueo" ColumnName="UsuarioLogueo" />
+          <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+          <ScalarProperty Name="TipoMensaje" ColumnName="TipoMensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipodeMensaje">
+      <EntityTypeMapping TypeName="BiosMessenger2Model.TipodeMensaje">
+        <MappingFragment StoreEntitySet="TipodeMensaje">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="BiosMessenger2Model.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="UsuarioLogueo" ColumnName="UsuarioLogueo" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Reciben" TypeName="BiosMessenger2Model.Reciben" StoreEntitySet="Reciben">
+      <EndProperty Name="Mensaje">
+        <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+      </EndProperty>
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="UsuarioLogueo" ColumnName="UsuarioLogueo" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

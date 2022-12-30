@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BiosMessenger2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Mensaje">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TextoMensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Asunto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaHora" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuarioLogueo" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FechaCaducidad" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TipoMensaje" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TipodeMensaje" Relationship="Self.FK__Mensaje__TipoMen__2F10007B" FromRole="Mensaje" ToRole="TipodeMensaje" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Mensaje__Usuario__2D27B809" FromRole="Mensaje" ToRole="Usuario" />
+    <NavigationProperty Name="Reciben" Relationship="Self.Reciben" FromRole="Mensaje" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="TipodeMensaje">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="UsuarioLogueo" />
+    </Key>
+    <Property Name="UsuarioLogueo" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Contrasena" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Mensaje__TipoMen__2F10007B">
+    <End Role="TipodeMensaje" Type="Self.TipodeMensaje" Multiplicity="1" />
+    <End Role="Mensaje" Type="Self.Mensaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipodeMensaje">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Mensaje">
+        <PropertyRef Name="TipoMensaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Mensaje__Usuario__2D27B809">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Mensaje" Type="Self.Mensaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="UsuarioLogueo" />
+      </Principal>
+      <Dependent Role="Mensaje">
+        <PropertyRef Name="UsuarioLogueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Reciben">
+    <End Role="Mensaje" Type="Self.Mensaje" Multiplicity="*" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="BiosMessenger2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Mensaje" EntityType="Self.Mensaje" />
+    <EntitySet Name="TipodeMensaje" EntityType="Self.TipodeMensaje" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK__Mensaje__TipoMen__2F10007B" Association="Self.FK__Mensaje__TipoMen__2F10007B">
+      <End Role="TipodeMensaje" EntitySet="TipodeMensaje" />
+      <End Role="Mensaje" EntitySet="Mensaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Mensaje__Usuario__2D27B809" Association="Self.FK__Mensaje__Usuario__2D27B809">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Mensaje" EntitySet="Mensaje" />
+    </AssociationSet>
+    <AssociationSet Name="Reciben" Association="Self.Reciben">
+      <End Role="Mensaje" EntitySet="Mensaje" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
