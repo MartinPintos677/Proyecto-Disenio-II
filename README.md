@@ -122,6 +122,6 @@ El sitio web del cliente estará instalado en otro servidor, diferente al contra
 alojar al WebService.
 
 Requerimientos de Entrega:
-Solución completa del Software
-Script de la base de datos
-MER
+Solución completa del Software,
+Script de la base de datos y
+MER.
