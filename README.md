@@ -125,3 +125,6 @@ Requerimientos de Entrega:
 Solución completa del Software,
 Script de la base de datos y
 MER.
+
+Nota: todos los diagramas deberán ser generados con una herramienta para lenguaje UML. Estos deberán ser
+entregados en forma digital: una copia del archivo original del diagrama y una copia en formato PDF o JPG
